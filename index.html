@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Joshua Lyle</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Joshua Lyle Software Gameplay Game Play Engineer" name="keywords">
+        <meta content="Joshua Lyle, Gameplay and Software Engineer" name="description">
+        <style>
+            body {font-family: Arial;}
+            /* Style the tab */
+            .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            }
+            /* Style the buttons inside the tab */
+            .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+            }
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+            background-color: #ddd;
+            }
+            /* Create an active/current tablink class */
+            .tab button.active {
+            background-color: #ccc;
+            }
+            /* Style the tab content */
+            .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+            }
+            table 
+            {
+                font-family: arial, sans-serif;
+                border: 1px solid black;
+                width: 100%;
+            }
+            td 
+            {
+                border: 1px solid black;
+                border-right: 4px solid black;
+                border-left: 4px solid black;
+                text-align: center;
+                padding: 8px;
+            }
+            th 
+            {
+                border: 4px solid black;
+                text-align: center;
+                padding: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Joshua Lyle</h2>
+        <p> Gameplay and Software Engineer</p>
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Home')" id = "defaultOpen">Home</button>
+            <button class="tablinks" onclick="openTab(event, 'Resume')">Resume</button>
+            <button class="tablinks" onclick="openTab(event, 'Portfolio')">Portfolio</button>
+            <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+        </div>
+        <div id="Home" class="tabcontent">
+            <h2>Home</h2>
+            <p>I am a software engineer with a passion for developing video games and XR content. </p>
+        </div>
+        <div id="Resume" class="tabcontent">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about-content">
+                            <div class="section-header text-left">
+                                <p></p>
+                                <h2>Resume</h2>
+                            </div>
+                            <div class="about-text">
+                                <p>
+                                    Tools and Skills Summary
+                                </p>
+                            </div>
+
+                            <table id="summaryContainer"></table>
+
+                            <div class = "cv-content">
+                                <a href="CV.pdf" download="JoshuaLyleCV">
+                                    <p>Download CV</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Portfolio" class="tabcontent">
+            <div class="container-fluid">
+                <h2>Portfolio</h2>
+                <h4>Space Ships</h4>
+                <p>State: Open Alpha</p>
+                <p>
+                    Space Ships is a multiplayer, first-person shooter in space. Space Ships allows a team of players to drive their pirate ship around in an open space arena with the goal to destory the opposing team's ship.
+                </p>
+                <p>
+                    This game introduces a rare mechanic where the players are not only free to traverse around their own ship, but can disembark and embark at any time.
+                </p>
+                <p>
+                    As the only developer, I had to design and implement:
+                </p>
+                <div class="row">
+                    <div class="col-12">
+                        <ul id="portfolio-filter">
+                            <li data-filter=".filter-3">Gameplay</li>
+                            <li data-filter=".filter-2">Movement</li>
+                            <li data-filter=".filter-1">Physics</li>
+                            <li data-filter=".filter-3">Replication</li>
+                            <li data-filter=".filter-3">Multiplayer</li>
+                            <li data-filter=".filter-3">UI</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="https://joshuasml.itch.io/space-ships">Link to itch.io page</a>
+                <p></p>
+                <img src="ss2.PNG" alt="Screen Shot 2" width="480" height="270">
+                <img src="ss6.PNG" alt="Screen Shot 6" width="480" height="270">
+               
+            </div>
+        </div>
+        <div id="Contact" class="tabcontent">
+            <div class="container-fluid">
+                <p></p>
+                <h2>Contact</h2>
+                <div class="footer-menu">
+                    <p>joshuapaullyle@gmail.com</p>
+                    <p>Florida, USA</p>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Start -->
+        <div class="footer wow fadeIn" data-wow-delay="0.3s">
+            <div class="container-fluid">
+                <p></p>
+                <div class="container copyright">
+                    <p>&copy; <a href="#">jpl25.github.io/joshualyle.github.io</a>, All Right Reserved
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        <script>
+            var tech = ['Unreal Engine', 'Unity', 'Godot','AR','Multiplayer','Visual Studio', 'Visual Studio Code']
+            var lang = ['C#','C++','Java','Python']
+            var skills = ['Agile', 'Scrum','Kanban','Git','Game Development','Gameplay Engineer','Software Engineer']
+            var str = '<tr><th>Tech</th><th>Languages</th><th>Skills</th></tr>'
+            var size
+
+            if(tech.length>lang.length)
+            {
+                if(tech.length>skills.length)
+                {
+                    size = tech.length
+                }
+                else
+                {
+                    size = skills.length
+                }
+            }
+            else
+            {
+                if(lang.length>skills.length)
+                {
+                    size = lang.length
+                }
+                else
+                {
+                    size = skills.length
+                }
+            }
+            for(let i = 0; i < size; i ++)
+            {
+                var line = ''
+                
+                if(i < tech.length)
+                {
+                    line += '<td>' + tech[i] + '</td>'
+                }
+                else
+                {
+                    line += '<td> </td>'
+                }
+
+                if(i < lang.length)
+                {
+                    line += '<td>' + lang[i] + '</td>'
+                }
+                else
+                {
+                    line += '<td> </td>'
+                }
+
+                if(i < skills.length)
+                {
+                    line += '<td>' + skills[i] + '</td>'
+                }
+                else
+                {
+                    line += '<td> </td>'
+                }
+                str += '<tr> ' + line + ' </tr>' 
+            }
+            document.getElementById("summaryContainer").innerHTML = str;
+        </script>
+        <script>
+            function openTab(evt, tabName) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+              document.getElementById(tabName).style.display = "block";
+              evt.currentTarget.className += " active";
+            }
+        </script>
+        <script>
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+    </body>
+</html>
